@@ -1,0 +1,283 @@
+
+<!doctype html>
+<html class="fixed"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">>
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <title>Confirm Registration</title>
+</head>
+<body>
+    <th:block layout:fragment="page_content">
+        <section role="main" class="content-body content-body-modern mt-0">
+                <header class="page-header">
+                    <h2><a href="/registrations">Registrations</a></h2>
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a href="/index">
+                                    <i class="bx bx-folder"></i>
+                                </a>
+                            </li>
+                            <li><span>Confirm Registration</span></li>
+                        </ol>
+                    </div>
+                </header>
+
+                <!-- start: page th:object="${clientForm}" -->
+                <form id="frm_client" class="ecommerce-form action-buttons-fixed"  th:action="@{/registration-details}" method="post"  enctype="multipart/form-data">
+    <!--                <input th:field="*{id}" type="hidden" />-->
+                    <div class="row">
+                        <div class="col">
+                            <section class="card card-modern card-big-info">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-2-5 col-xl-1-5">
+                                            <i class="card-big-info-icon bx bx-user-circle"></i>
+                                            <h2 class="card-big-info-title">Responsible Info</h2>
+                                            <p class="card-big-info-desc">Add here the Responsible account info with all details and necessary information.</p>
+                                        </div>
+                                        <div class="col-lg-3-5 col-xl-4-5">
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">First Name</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" readonly />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Last Name</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" readonly />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Email</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="email" class="form-control form-control-modern" value="" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Phone</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <section class="card card-modern card-big-info">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-2-5 col-xl-1-5">
+                                            <i class="card-big-info-icon bx bx-building"></i>
+                                            <h2 class="card-big-info-title">Institute Info</h2>
+                                            <p class="card-big-info-desc">Add here the Medical Intitute info with all details and necessary information.</p>
+                                        </div>
+                                        <div class="col-lg-3-5 col-xl-4-5">
+                                            <div class="shipping-fields-wrapper collapse show">
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Institute Name</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Institute Type</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <select class="form-control form-control-modern">
+                                                            <option value="CLINIC" selected>Clinic</option>
+                                                            <option value="HOSPITAL">Hospital</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Institute Status</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <select class="form-control form-control-modern">
+                                                            <option value="created" selected disabled>created</option>
+                                                            <option value="pending" disabled>pending</option>
+                                                            <option value="confirmed">confirmed</option>
+                                                            <option value="cancelled" >cancelled</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Network display Name</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Web site</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Institute Description</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <textarea rows="5" class="form-control form-control-modern" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Street Number</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Address Line 1</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Address Line 2</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Town</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Postcode / ZIP</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <input type="text" class="form-control form-control-modern" value="" required />
+                                                    </div>
+                                                </div>
+                                             <!--   <div class="form-group row align-items-center">
+                                                    <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Country / Region</label>
+                                                    <div class="col-lg-7 col-xl-6">
+                                                        <select class="form-control form-control-modern">
+                                                            <option th:each="country: ${countries}" th:value="${country.name}" th:text="${country.name}">Country</option>
+                                                        </select>
+                                                    </div>
+                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <section class="card card-modern card-big-info">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-2-5 col-xl-1-5">
+                                            <i class="card-big-info-icon bx bx-camera"></i>
+                                            <h2 class="card-big-info-title">Institute Image</h2>
+                                            <p class="card-big-info-desc">Upload your Institute image.</p>
+                                        </div>
+                                        <div class="col-lg-3-5 col-xl-4-5">
+                                            <div class="form-group row align-items-center">
+                                                <div class="col">
+                                                    <label id="imgSizeError" class="d-none" style="color:red;">The file size must be no more than 2 MB</label>
+                                                    <div class="dz-square hand-pointer text-center" onclick="document.getElementById('cover').click();">
+                                                        <img id="pic2" th:src="@{img/add-picture.png}"
+                                                             alt="img-add" class="profile-img" style="height: 250px; width: 300px; object-fit: cover;">
+                                                        <input name="picture" id="cover" type="file" accept="img/*" class="invisible" onchange="setCover();"
+                                                               required="true"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <section class="card card-modern card-big-info">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-lg-2-5 col-xl-1-5">
+                                            <i class="card-big-info-icon bx bx-dollar-circle"></i>
+                                            <h2 class="card-big-info-title">Bank Account Info</h2>
+                                            <p class="card-big-info-desc">Add here the customer bank account info with all details and necessary information.</p>
+                                        </div>
+                                        <div class="col-lg-3-5 col-xl-4-5">
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank name</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank Account Number</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank Swift Code</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank Street Number</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank First Line Address</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank Second Line Address</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                           <!-- <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank Country</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <select th:field="*{bankCountry}" class="form-control form-control-modern">
+                                                        <option th:each="country: ${countries}" th:value="${country.name}" th:text="${country.name}">Country</option>
+                                                    </select>
+                                                </div>
+                                            </div>-->
+                                            <div class="form-group row align-items-center">
+                                                <label class="col-lg-5 col-xl-3 control-label text-lg-right mb-0">Bank Town</label>
+                                                <div class="col-lg-7 col-xl-6">
+                                                    <input type="text" class="form-control form-control-modern" value="" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="row action-buttons">
+                        <div class="col-12 col-md-auto">
+                            <button type="submit" class="btn btn-primary btn-px-4 py-3 d-flex align-items-center font-weight-semibold line-height-1" data-loading-text="Loading...">
+                                <i class="bx bx-save text-4 mr-2"></i> <span>Confirm</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <!-- end: page -->
+            </section>
+    </th:block>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="fixed"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base.html}">
+<head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
+    <title>Registrations</title>
+</head>
+<body>
+    <th:block layout:fragment="page_content">
+        <section class="body">
+            <section role="main" class="content-body">
+                <header class="page-header">
+                    <h2>Registrations</h2>
+                    <div class="right-wrapper">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a href="/index">
+                                    <i class="bx bx-folder"></i>
+                                </a>
+                            </li>
+                            <li><span>Registrations</span></li>
+                        </ol>
+                    </div>
+                </header>
+                <!-- start: page -->
+                <div class="row">
+                    <div class="col">
+
+                        <div class="card card-modern">
+                            <div class="card-body">
+                                <div class="datatables-header-footer-wrapper">
+                                    <div class="datatable-header">
+                                        <div class="row align-items-center mb-3">
+                                            <div class="col-12 col-lg-auto mb-3 mb-lg-0">
+                                            </div>
+
+                                            <div class="col-8 col-lg-auto ml-auto mb-3 mb-lg-0">
+                                                <div class="d-none align-items-lg-center flex-column flex-lg-row">
+                                                    <label class="ws-nowrap mr-3 mb-0">Filter By:</label>
+                                                    <select class="form-control select-style-1 filter-by" name="filter-by">
+                                                        <option value="all" selected>All</option>
+                                                        <option value="1">Institute Name</option>
+                                                        <option value="2">Institute Type</option>
+                                                        <option value="3">Responsible</option>
+                                                        <option value="4">Email</option>
+                                                        <option value="5">Phone</option>
+                                                        <option value="6">Status</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-lg-auto pl-lg-1 mb-3 mb-lg-0">
+                                                <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+                                                    <label class="ws-nowrap mr-3 mb-0" >Show :</label>
+                                                    <select class="form-control select-style-1 results-per-page"
+                                                            name="results-per-page">
+                                                        <option value="12" selected>12</option>
+                                                        <option value="24">24</option>
+                                                        <option value="36">36</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-auto pl-lg-1">
+                                                <div class="search search-style-1 search-style-1-lg mx-lg-auto">
+                                                    <div class="input-group">
+                                                        <input type="text" class="search-term form-control"
+                                                               name="search-term" id="search-term"
+                                                               placeholder="search">
+                                                        <span class="input-group-append">
+                                                                    <button class="btn btn-default" type="submit"><i
+                                                                            class="bx bx-search"></i></button>
+                                                                </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="table table-ecommerce-simple table-striped mb-0"
+                                           id="datatable-ecommerce-list" style="min-width: 640px;">
+
+                                        <thead>
+                                            <tr>
+                                                <th width="24%">Institute Name</th>
+                                                <th width="15%">Institute Type</th>
+                                                <th width="20%">Responsible</th>
+                                                <th width="20%">E-mail</th>
+                                                <th width="12%">Phone</th>
+                                                <th width="9%">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+<!--                                        th:each="client : ${Registrations}"-->
+                                            <tr>
+                                                <td><a th:href="@{/registration-details}"><strong>Institute One</strong></a></td>
+                                                <td>Clinic Bondeko</td>
+                                                <td>Mr. Ilunga Prince</td>
+                                                <td>okler@domain.com</td>
+                                                <td>Phone</td>
+                                                <td>Status</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+<!--                                    <div th:if="${#lists.isEmpty(Registrations)}" ><h1 th:text="#{gen.empty-list}">This list is empty</h1></div>-->
+
+                                    <hr class="solid mt-5 opacity-4">
+                                    <div class="datatable-footer">
+                                        <div class="row align-items-center justify-content-between mt-3">
+                                            <div class="col-md-auto order-1 mb-3 mb-lg-0">
+                                                <div class="d-flex align-items-stretch">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-auto text-center order-3 order-lg-2">
+                                                <div class="results-info-wrapper"></div>
+                                            </div>
+                                            <div class="col-lg-auto order-2 order-lg-3 mb-3 mb-lg-0">
+                                                <div class="pagination-wrapper"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end: page -->
+                </div>
+                <!-- end: page -->
+            </section>
+        </section>
+    </th:block>
+</body>
+</html>

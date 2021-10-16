@@ -11,4 +11,11 @@ public class User {
     String username;
     String password;
     String userType;
+    Person person;
+
+    public User(String username, String password, String userType) {
+        this.username = username;
+        this.password = password;
+        this.userType = userType;
+    }
 }

@@ -85,23 +85,27 @@
 
                                         <thead>
                                             <tr>
-                                                <th width="24%">Institute Name</th>
-                                                <th width="15%">Institute Type</th>
-                                                <th width="20%">Responsible</th>
-                                                <th width="20%">E-mail</th>
-                                                <th width="12%">Phone</th>
+                                                <th width="24%">Concerned Name</th>
+                                                <th width="12%">Concerned Sex</th>
+                                                <th width="15%">Save Date</th>
+                                                <th width="20%">Mother Name</th>
+                                                <th width="20%">Father Name</th>
                                                 <th width="9%">Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-<!--                                        th:each="client : ${Registrations}"-->
-                                            <tr>
-                                                <td><a th:href="@{/registration-details}"><strong>Institute One</strong></a></td>
-                                                <td>Clinic Bondeko</td>
-                                                <td>Mr. Ilunga Prince</td>
-                                                <td>okler@domain.com</td>
-                                                <td>Phone</td>
-                                                <td>Status</td>
+<!--                                        -->
+                                            <tr th:each="registration : ${registrations}">
+                                                <td><a th:href="@{/registration-details}"><strong th:text="|${registration.concerned.firstName} ${registration.concerned.middleName} ${registration.concerned.lastName}|">Institute One</strong></a></td>
+                                                <td th:text="${registration.concerned.sex}">Sexe</td>
+                                                <td th:text="${registration.saveDate}">Clinic Bondeko</td>
+                                                <td th:text="|${registration.mother.firstName} ${registration.mother.middleName} ${registration.mother.lastName}|">Mr. Ilunga Prince</td>
+                                                <td th:text="|${registration.father.firstName} ${registration.father.middleName} ${registration.father.lastName}|">okler@domain.com</td>
+                                                <td>
+                                                    <span th:classappend="${ registration.firstValidator == null ? 'on-hold' : registration.secondValidator == null ? 'processing' : 'completed' }"
+                                                          class="ecommerce-status"
+                                                          th:text="${ registration.firstValidator == null ? 'pending' : registration.secondValidator == null ? 'processing' : 'validated' }"></span>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

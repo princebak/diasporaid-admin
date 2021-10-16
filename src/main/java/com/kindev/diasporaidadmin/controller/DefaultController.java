@@ -24,4 +24,12 @@ public class DefaultController {
     public String getRegistration(){
         return "registration_details";
     }
+    @GetMapping("/myprofile")
+    public String getProfile(){
+        return "myprofile";
+    }
+    @GetMapping("/error")
+    public String getError(){
+        return "login";
+    }
 }
